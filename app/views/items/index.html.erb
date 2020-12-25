@@ -6,13 +6,13 @@
   <div>
     <table>
       <tr>
-        <th>品名</th><th>量</th><th>店舗名（指定ある場合）</th>
+        <th>依頼者名</th><th>品名</th><th>量</th><th>店名（指定ある場合）</th><th>店舗名（指定ある場合）</th>
       </tr>
   <% @items.each do |item| %>
       <tr>
-        <td><%= item.user.nickname %></td><td><%= item.item_name %></td><td><%= item.volume %></td><td><%= item.item_s_name %><%= item.item_s_branch %></td><br>
+        <td><%= item.user.nickname %></td><td><%= item.item_name %></td><td><%= item.volume %></td><td><%= item.item_s_name %></td><td><%= item.item_s_branch %></td>
       </tr>
+  <% end %>
     </table>
   </div>
-  <% end %>
 <% end %>

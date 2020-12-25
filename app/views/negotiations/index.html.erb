@@ -1,0 +1,26 @@
+<h1>交渉ページ</h1>
+<h4>交渉中品物</h4>
+<% if @items != nil %>
+  <div>
+    <table>
+      <tr>
+        <th>品名</th><th>量</th><th>店名（指定ある場合）</th><th>店舗名（指定ある場合）</th><th>備考</th>
+      </tr>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.item_name %></td><td><%= item.volume %></td><td><%= item.item_s_name %></td><td><%= item.item_s_branch %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+
+<h4>コメント</h4>
+<%= form_with model: @message do |f| %>
+  <%= f.text_field :text %>
+  <%= f.submit '送信' %>
+<% end %>
+
+<% @messages.reverse_each do |message| %>
+  <p><%= message.text %></p>
+<% end %>

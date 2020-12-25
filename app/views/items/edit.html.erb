@@ -21,7 +21,12 @@
     <%= f.text_field :item_s_branch, autofocus: true, maxlength:"40" %>
   </div>
 
+  <div class="field">
+    <label class="form-text">コメント</label>
+    <%= f.text_area :comments, autofocus: true %>
+  </div>
+
   <div class="actions">
-    <%= f.submit "追加する" %>
+    <%= f.submit "変更する" %>
   </div>
 <% end %>

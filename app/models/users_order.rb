@@ -1,0 +1,2 @@
+class UsersOrder < ApplicationRecord
+end

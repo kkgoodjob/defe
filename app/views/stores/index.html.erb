@@ -1,0 +1,38 @@
+<h1>支援者用ページ</h1>
+
+<h4>依頼者リスト</h4>
+<% if @items != nil %>
+  <div>
+    <table>
+      <tr><th>依頼者名</th><th>お届け先</th><th>店指定</th><th>依頼品</th></tr>
+      <% @old_num = 0 %>
+      <% @items.each do |item| %>
+        <% new_num = item.user_id %>
+        <% if @old_num == 0 %>
+          <% @items_name = [] %>
+          <tr><td><%= item.user.nickname %></td>
+          <td><%= item.user.prefecture.name %><%= item.user.municipality %><%= item.user.town %><%= item.user.chome %></td>
+          <td><%= item.item_s_name %><%= item.item_s_branch %></td>
+          <% @old_num = item.user_id %>
+        <% end %>
+        <% if new_num != @old_num %>
+          <td><% @items_name.each do |item_name| %>
+                <%= item_name %>
+              <% end %>
+          </td><td><%= link_to '詳細へ', item_path(@old_num) %></td></tr><br>
+          <% @old_num = item.user_id %>
+          <tr><td><%= item.user.nickname %></td>
+          <td><%= item.user.prefecture.name %><%= item.user.municipality %><%= item.user.town %><%= item.user.chome %></td>
+          <td><%= item.item_s_name %><%= item.item_s_branch %></td>
+          <% @items_name = [] %>
+          <% @items_name.push(item.item_name) %>
+        <% else %>
+          <% @items_name.push(item.item_name) %>
+        <% end %>
+      <% end %>
+      <td>
+        <% @items_name.each do |item_name| %>
+          <%= item_name %>
+        <% end %>
+      </td><td><%= link_to '詳細へ', item_path(@old_num) %></td></tr>
+<% end %>
