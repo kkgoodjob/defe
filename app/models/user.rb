@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :items
   has_many :stores
-  has_many :negotiations
+  has_many :users_negotiations
+  has_many :negotiations, through: :users_negotiations
+  has_many :messages
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture

@@ -1,13 +1,12 @@
 class MessagesController < ApplicationController
   def create
-    @message = Messages.new(message_params)
-    if @message.save
-      redirect_to item_negotiation_path(@message.negotiation.id)
-    end
+    message = Messages.create(message_params)
+    redirect_to 
   end
 
-  private 
+  private
+
   def message_params
-    require(:message).permit(:text).merge(negotiation_id: negotiation.id)
+    params.require(:message).permit(:text).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 end
