@@ -20,6 +20,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :town
       t.string :chome
       t.integer :phone_number, null: false
+      t.integer :attributing_id, null: false
 
       ## Recoverable
       t.string   :reset_password_token

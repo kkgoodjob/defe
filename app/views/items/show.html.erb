@@ -1,0 +1,21 @@
+<h1>依頼品詳細ページ</h1>
+
+<%# <%= @items.user.nickname %>
+
+
+<% if @items != nil %>
+  <div>
+    <table>
+      <tr>
+        <th>品名</th><th>量</th><th>店名（指定ある場合）</th><th>店舗名（指定ある場合）</th><th>備考</th>
+      </tr>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.item_name %></td><td><%= item.volume %></td><td><%= item.item_s_name %></td><td><%= item.item_s_branch %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+
+<%= link_to '交渉', item_negotiations_path(@items[0].user_id) %>

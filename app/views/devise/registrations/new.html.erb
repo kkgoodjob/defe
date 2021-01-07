@@ -5,6 +5,11 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <label class="form-text">支援者 or 依頼者</label>
+    <%= f.collection_select(:attributing_id, Attributing.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+  </div>
+
+  <div class="field">
     <label class="form-text">ニックネーム</label>
     <%= f.text_field :nickname, autofocus: true, maxlength:"40" %>
   </div>
@@ -83,6 +88,7 @@
     <label class="form-text">電話番号</label>
     <%= f.text_field :phone_number, class:"input-default", id:"city", placeholder:"例）00000000000"%>
   </div>
+
 
   <div class="actions">
     <%= f.submit "会員登録" %>

@@ -1,0 +1,43 @@
+<h1>交渉ページ</h1>
+
+<h4>交渉中品物</h4>
+  <div class="item_names">
+  <ol>
+    <li></li>
+  </ol>
+  </div>
+
+<h4>未交渉品物</h4>
+<% if @items != nil %>
+  <div>
+    <table>
+      <tr>
+        <th>品名</th><th>量</th><th>店名（指定ある場合）</th><th>店舗名（指定ある場合）</th><th>備考</th>
+      </tr>
+      <% @items.each do |item| %>
+        <tr>
+        <form name="form_item">
+          <input type="checkbox" name="item" value=""><td><%= item.item_name %></td><td><%= item.volume %></td><td><%= item.item_s_name %></td><td><%= item.item_s_branch %></td>
+          </form>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+
+
+<h4>コメント</h4>
+<div id='message_text'>
+  <%# <%= form_with(model: [@negotiation, @messages], local: true) do |f| %> %>
+    <%# <%= f.text_field :text %> %>
+    <%# <%= f.submit '送信' %> %>
+  <%# <% end %> %>
+</div>
+
+<div id='messages'>
+<%# <% if @messages %> %>
+  <%# <% @messages.reverse_each do |message| %> %>
+    <%# <p><%= message.text %></p> %>
+  <%# <% end %> %>
+<%# <% end %> %>
+</div>
