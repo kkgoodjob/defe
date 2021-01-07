@@ -1,24 +1,62 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション名
+defe(delivery for elderly)
 
-Things you may want to cover:
+## アプリケーションの概要
+#### 高齢者のための買い物支援
+- 高齢者が依頼品を登録
+- 支援者が依頼品を届ける支援
+- 支援者が今日行く店を登録して、依頼者の住所をもとにレコメンド
+- チャットで交渉
+- 決済導入
 
-* Ruby version
+## テスト用アカウント
+- mail: aaaa@gmail.com
+- password: aaaaa1
 
-* System dependencies
+## 利用方法
+1. ユーザ登録して支援者か依頼者かを選択
+2. 依頼者は依頼品を登録
+3. 支援者は今日行く店を登録（任意）
+4. 支援か依頼の提案をし、交渉
+5. 交渉完了後、支援
+6. 支援完了後、決済と相互評価
 
-* Configuration
+## 目指した課題解決
+- 高齢者や障害者など車に乗れない、重い荷物を持てないなどにより、買い物に行くことが不便になっている（地方は特に）という課題を若者などの支援によって解決。
 
-* Database creation
+## 洗い出した要件
+- ユーザー登録機能
+- 依頼品登録機能
+- レコメンド機能
+- 今日行く店登録機能
+- 交渉機能
+- 交渉完了機能
+- チャット機能
+- 評価機能
+- 決済機能
 
-* Database initialization
+## 実装した機能についてのGIFと説明
+- ユーザー登録機能（支援者か依頼者か選択）
+- 依頼品を登録したユーザーを、１ユーザーごとにリストにし、依頼品を表示
 
-* How to run the test suite
+## 実装予定の機能
+- レコメンド機能
+- 今日行く店登録機能
+- 交渉機能
+- 交渉完了機能
+- チャット機能
+- 評価機能
+- 決済機能
 
-* Services (job queues, cache servers, search engines, etc.)
+## データベース設計
+![ER図](https://gyazo.com/d2e49351c25943e465d2e9a8a5cac2c8)
 
-* Deployment instructions
-
-* ...
+## ローカルでの動作方法
+`$ git clone https://github.com/kkgoodjob/defe`
+`$ cd defe`
+`$ bundle install`
+`$ yarn install`
+`$ rails db:create`
+`$ rails db:migrate`
