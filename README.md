@@ -51,7 +51,6 @@ defe(delivery for elderly)
 - 決済機能
 
 ## データベース設計
-![ER図](https://gyazo.com/d2e49351c25943e465d2e9a8a5cac2c8)
 https://gyazo.com/d2e49351c25943e465d2e9a8a5cac2c8
 
 ## ローカルでの動作方法
